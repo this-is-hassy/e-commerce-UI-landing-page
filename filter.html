@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .card {
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+      }
+
+      .card-img-top {
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .page-link {
+        color: #000;
+        border: none;
+        padding: 8px 16px;
+        margin: 0 4px;
+      }
+
+      .page-link:hover {
+        color: #000;
+        background-color: #f8f9fa;
+      }
+
+      .page-item.active .page-link {
+        background-color: #000;
+        border-color: #000;
+      }
+
+      .filter-section {
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 1rem;
+      }
+
+      @media (max-width: 1023px) {
+        .filters {
+          display: none;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <header class="section-navbar">
+      <div class="container">
+        <a href="/">
+          <img
+            src="asset/logo.png"
+            alt="cyber"
+            style="width: 66px; height: 23px"
+          />
+        </a>
+
+        <a href="/" class="menu">
+          <img
+            src="/asset/ham-burger-icon.png"
+            alt="menu"
+            style="width: 40px; height: 40px"
+          />
+        </a>
+
+        <div class="group search">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <g>
+              <path
+                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+              ></path>
+            </g>
+          </svg>
+          <input placeholder="Search" type="search" class="input" />
+        </div>
+
+        <nav class="navbar flex">
+            <li><a href="/main.html">Main</a></li>
+            <li><a href="/filter.html">Filter</a></li>
+            <li><a href="/products.html">Products</a></li>
+        </nav>
+
+        <ul class="nav-icon flex align">
+          <li>
+            <a href="/">
+              <img src="/asset/favorite-black.svg" alt="fav-list" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src="/asset/cart.svg" alt="cart" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src="/asset/profile.svg" alt="profile" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- Navbar End -->
+
+    <!-- Product-Section-Start -->
+    <main class="section-filter">
+      <div class="container">
+        <div class="row">
+          <!-- Mobile Filter Button (visible only on mobile) -->
+          <div class="col-12 d-lg-none mb-3">
+            <button
+              class="btn btn-outline-secondary w-100 link-opacity-10-hover"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#filterOffcanvas"
+            >
+              Filters
+            </button>
+          </div>
+
+          <!-- Filters Sidebar (converts to offcanvas on mobile) -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="filters pe-lg-5">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3 "
+              >
+                <h3 class="mb-0 fw-bolder">Brand</h3>
+              </div>
+
+              <div class="accordion" id="filterAccordion">
+                <!-- Brand Filter -->
+                <div class="accordion-item border-0">
+                  <div class="accordion-body p-0">
+                    <div class="form-check mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="apple"
+                      />
+                      <label class="form-check-label" for="apple"
+                        >Apple (7)</label
+                      >
+                    </div>
+                    <div class="form-check mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="samsung"
+                      />
+                      <label class="form-check-label" for="samsung"
+                        >Samsung (5)</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Battery Capacity -->
+                <div class="filter-section mb-3">
+                  <h6 class="mb-2">Battery capacity</h6>
+                </div>
+
+                <!-- Screen Type -->
+                <div class="filter-section mb-3">
+                  <h6 class="mb-2">Screen type</h6>
+                </div>
+
+                <!-- Screen Diagonal -->
+                <div class="filter-section mb-3">
+                  <h6 class="mb-2">Screen diagonal</h6>
+                </div>
+
+                <!-- Protection Class -->
+                <div class="filter-section mb-3">
+                  <h6 class="mb-2">Protection class</h6>
+                </div>
+
+                <!-- Built-in Memory -->
+                <div class="filter-section mb-3">
+                  <h6 class="mb-2">Built-in memory</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="col-12 col-lg-9">
+            <!-- Products Grid -->
+            <div class="row g-3">
+              <!-- Sort Dropdown -->
+              <div
+                class="d-flex justify-content-between mb-0 mt-5 mt-lg-0 mb-lg-3"
+              >
+                <small class="text-muted">Selected Products: <strong class="text-black">65</strong></small>
+
+                <select style="font-weight: 500; color: black;" class="form-select w-auto">
+                  <option>By rating</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                </select>
+              </div>
+
+              <!-- Product Card Template -->
+              <div class="col-12 col-sm-12 col-lg-12">
+                <div class="grid subgrid filter-subgrid">
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-1.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        Apple iPhone 14 Pro Max 128GB Deep Purple
+                      </h6>
+                      <h4>$900</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-2.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        Blackmagic Pocket Cinema Camera 6k
+                      </h6>
+                      <h4>$2535</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-3.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        Apple Watch Series 9 GPS 41mm Starlight Aluminium Case
+                      </h6>
+                      <h4>$399</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-4.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        AirPods Headphone Max Silver
+                      </h6>
+                      <h4>$549</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-5.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        Samsung Galaxy Watch6 Classic 47mm Black
+                      </h6>
+                      <h4>$369</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-6.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        Galaxy Z Fold5 Unlocked | 256GB | Phantom Black
+                      </h6>
+                      <h4>$1799</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-7.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        Galaxy Air Buds FE Graphite Mate
+                      </h6>
+                      <h4>$99.99</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-product-item">
+                    <div>
+                      <img
+                        class="product-fav-position"
+                        src="asset/favorite-icon.svg"
+                        alt="fav"
+                      />
+                      <img
+                        src="asset/product-8.png"
+                        style="width: 160px; height: 160px"
+                        alt="product"
+                      />
+                      <h6 class="product-description">
+                        Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021
+                      </h6>
+                      <h4>$398</h4>
+                      <div>
+                        <a href="/" class="btn-secondary btn-space">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+             
+            </div>
+          </div>
+        </div>
+
+         <!-- Pagination -->
+         <nav class="mt-4">
+            <ul class="pagination justify-content-center">
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">...</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">12</a>
+              </li>
+            </ul>
+          </nav>
+
+        <!-- Mobile Filter Offcanvas -->
+        <div class="offcanvas offcanvas-start" id="filterOffcanvas">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Filters</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <!-- Copy the filter content here for mobile -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Product-Section-End -->
+
+    <!-- Footer-Section-Start -->
+    <footer class="section-footer">
+      <div class="container">
+        <div class="bg-footer">
+          <div>
+            <a href="/">
+              <img
+                class="lg-grid-gap"
+                src="asset/logo-2.png"
+                alt="logo"
+                style="width: 95px; height: 22px"
+              />
+            </a>
+            <p>
+              We are a residential interior design firm located in Portland. Our
+              boutique-studio offers more than
+            </p>
+          </div>
+
+          <div>
+            <h6>Services</h6>
+            <a href="/">Bonus program</a>
+            <a href="/">Gift cards</a>
+            <a href="/">Credit and payment</a>
+            <a href="/">Service contracts</a>
+            <a href="/">Non-cash account</a>
+            <a href="/">Payment</a>
+          </div>
+
+          <div>
+            <h6>Assistance to the buyer</h6>
+            <a href="/">Find an order</a>
+            <a href="/">Terms of delivery</a>
+            <a href="/">Exchange and return of goods</a>
+            <a href="/">Gurantee</a>
+            <a href="/">Frequently asked questions</a>
+            <a href="/">Terms of use of the site</a>
+          </div>
+
+          <div class="link-space">
+            <a href="/">
+              <img
+                src="asset/twitter.png"
+                alt="twitter"
+                style="width: 24px; height: 20px"
+              />
+            </a>
+            <a href="/">
+              <img
+                src="asset/facebook.png"
+                alt="facebook"
+                style="width: 11.54px; height: 20px"
+              />
+            </a>
+            <a href="/">
+              <img
+                src="asset/tiktok.png"
+                alt="tiktok"
+                style="width: 20px; height: 20px"
+              />
+            </a>
+            <a href="/">
+              <img
+                src="asset/instagram.png"
+                alt="instagram"
+                style="width: 20px; height: 20px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer-Section-End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

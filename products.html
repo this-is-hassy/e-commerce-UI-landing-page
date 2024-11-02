@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone 14 Pro Max</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .product-container {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .product-images {
+        text-align: center;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+      }
+
+      .thumbnail-images {
+        margin-bottom: 3rem;
+        display: flex;
+        gap: 4rem;
+      }
+
+      .thumbnail-images img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .main-image img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+
+      .color-selector {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+      }
+
+      .color-option {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .storage-options {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+      }
+
+      .storage-option {
+        padding: 16px 40px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .storage-option.active {
+        background-color: #000;
+        color: white;
+      }
+
+      .specs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+      }
+
+      .spec-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+        display: flex;
+        gap: 10px;
+        margin: 20px 0;
+      }
+
+      .action-buttons button {
+        flex: 1;
+        padding: 12px;
+        border-radius: 8px;
+      }
+
+      .delivery-info {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+      }
+
+      .delivery-item {
+        text-align: center;
+        flex: 1;
+      }
+
+      @media (min-width: 768px) {
+        .product-images {
+          text-align: center;
+          display: flex;
+          flex-direction: row;
+        }
+        .thumbnail-images {
+        gap: 2rem;
+          flex-direction: column;
+        }
+
+        .action-buttons {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          margin: 20px 0;
+        }
+
+        .product-layout {
+          display: flex;
+          gap: 40px;
+        }
+
+        .product-images {
+          display: flex;
+          gap: 20px;
+          flex: 1;
+        }
+
+        .product-details {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <header class="section-navbar">
+      <div class="container">
+        <a href="/">
+          <img
+            src="asset/logo.png"
+            alt="cyber"
+            style="width: 66px; height: 23px"
+          />
+        </a>
+
+        <a href="/" class="menu">
+          <img
+            src="/asset/ham-burger-icon.png"
+            alt="menu"
+            style="width: 40px; height: 40px"
+          />
+        </a>
+
+        <div class="group search">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <g>
+              <path
+                d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+              ></path>
+            </g>
+          </svg>
+          <input placeholder="Search" type="search" class="input" />
+        </div>
+
+        <nav class="navbar flex">
+          <li><a href="/main.html">Main</a></li>
+          <li><a href="/filter.html">Filter</a></li>
+          <li><a href="/products.html">Products</a></li>
+        </nav>
+
+        <ul class="nav-icon flex align">
+          <li>
+            <a href="/">
+              <img src="/asset/favorite-black.svg" alt="fav-list" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src="/asset/cart.svg" alt="cart" />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <img src="/asset/profile.svg" alt="profile" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- Navbar End -->
+
+    <section class="section-product-detail">
+      <div class="container">
+        <div class="product-layout">
+          <div class="product-images d-flex align-items-center">
+          <div class="thumbnail-images">
+              <img src="asset/aside-1.png" alt="iPhone 14 Pro Max" />
+              <img src="asset/aside-2.png" alt="iPhone 14 Pro Max" />
+              <img src="asset/aside-3.png" alt="iPhone 14 Pro Max" />
+              <img src="asset/aside-4.png" alt="iPhone 14 Pro Max" />
+            </div>
+            <div class="main-image">
+              <img src="asset/front-aside.png" alt="iPhone 14 Pro Max" />
+            </div>
+          </div>
+
+          <div class="product-details">
+            <h1 class="fw-bolder display-3">Apple iPhone 14 Pro Max</h1>
+            <div class="pricing mt-4">
+              <span class="h1 text-black fw-semibold">$1399</span>
+              <span
+                class="text-decoration-line-through h2 ps-2 text-secondary text-opacity-50 fw-semibold"
+                >$1499</span
+              >
+            </div>
+
+            <div class="color-selector d-flex align-items-center">
+              <span>select color :</span>
+              <div class="color-option" style="background-color: #000000"></div>
+              <div class="color-option" style="background-color: #9031a8"></div>
+              <div class="color-option" style="background-color: #db0000"></div>
+              <div class="color-option" style="background-color: #ffd700"></div>
+              <div class="color-option" style="background-color: #eeeeee"></div>
+            </div>
+
+            <div class="storage-options">
+              <div class="storage-option">128GB</div>
+              <div class="storage-option active">256GB</div>
+              <div class="storage-option">512GB</div>
+              <div class="storage-option">1TB</div>
+            </div>
+
+            <div class="specs">
+              <div
+                style="background-color: #eeeeee"
+                class="spec-item ps-3 py-3 rounded-4"
+              >
+                <img
+                  src="asset/phone-feature-1.png"
+                  class="spec-icon"
+                  alt="Chip"
+                />
+                <div class="">
+                  <p>Screen size</p>
+                  <p class="text-dark">6.7"</p>
+                </div>
+              </div>
+              <div
+                style="background-color: #eeeeee"
+                class="spec-item ps-3 py-3 rounded-4"
+              >
+                <img
+                  src="asset/phone-feature-2.png"
+                  class="spec-icon"
+                  alt="Camera"
+                />
+                <div>
+                  <p>CPU</p>
+                  <p class="text-dark">Apple A16 Bionic</p>
+                </div>
+              </div>
+              <div
+                style="background-color: #eeeeee"
+                class="spec-item ps-3 py-3 rounded-4"
+              >
+                <img
+                  src="asset/phone-feature-3.png"
+                  class="spec-icon"
+                  alt="Battery"
+                />
+                <div>
+                  <p>Number of Cores</p>
+                  <p class="text-dark">6</p>
+                </div>
+              </div>
+              <div
+                style="background-color: #eeeeee"
+                class="spec-item ps-3 py-3 rounded-4"
+              >
+                <img
+                  src="asset/phone-feature-4.png"
+                  class="spec-icon"
+                  alt="Battery"
+                />
+                <div>
+                  <p>Main camera</p>
+                  <p class="text-dark">48-12 -12 MP</p>
+                </div>
+              </div>
+              <div
+                style="background-color: #eeeeee"
+                class="spec-item ps-3 py-3 rounded-4"
+              >
+                <img
+                  src="asset/phone-feature-5.png"
+                  class="spec-icon"
+                  alt="Battery"
+                />
+                <div>
+                  <p>Front-camera</p>
+                  <p class="text-dark">12 MP</p>
+                </div>
+              </div>
+              <div
+                style="background-color: #eeeeee"
+                class="spec-item ps-3 py-3 rounded-4"
+              >
+                <img
+                  src="asset/phone-feature-6.png"
+                  class="spec-icon"
+                  alt="Battery"
+                />
+                <div>
+                  <p>Battery capacity</p>
+                  <p class="text-dark">4323 mAh</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="description mt-3">
+              Enhanced capabilities thanks to an enlarged display of 6.7
+              increased work without recharging throughout the day. Everything
+              promises to work smooth lightning-fast new systematic ios
+              camera...
+              <a href="#" class="text-dark">more</a>
+            </p>
+
+            <div class="action-buttons">
+              <button class="btn btn-outline-dark fw-semibold">
+                Add to Wishlist
+              </button>
+              <button class="btn btn-dark bg-black fw-semibold">
+                Add to Cart
+              </button>
+            </div>
+
+            <div class="delivery-info">
+              <div class="delivery-item d-flex align-items-center gap-3">
+                <div
+                  style="
+                    background-color: #eceaea;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+                  "
+                >
+                  <img
+                    src="asset/procedure-1.png"
+                    style="width: 22px; height: 17px"
+                    alt="Delivery"
+                  />
+                </div>
+                <div>
+                  <p class="mb-0">Free Delivery</p>
+                  <small>1-2 day</small>
+                </div>
+              </div>
+              <div class="delivery-item d-flex align-items-center gap-3">
+                <div
+                  style="
+                    background-color: #eceaea;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+                  "
+                >
+                  <img
+                    src="asset/procedure-2.png"
+                    style="width: 23px; height: 21px"
+                    alt="Stock"
+                  />
+                </div>
+                <div>
+                  <p class="mb-0">In Full Stock</p>
+                  <small>Today</small>
+                </div>
+              </div>
+              <div class="delivery-item d-flex align-items-center gap-3">
+                <div
+                  style="
+                    background-color: #eceaea;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+                  "
+                >
+                  <img
+                    src="asset/procedure-3.png"
+                    style="width: 21px; height: 21px"
+                    alt="Guarantee"
+                  />
+                </div>
+                <div>
+                  <p class="mb-0">Guaranteed</p>
+                  <small>1 year</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this after the previous product section -->
+    <section class="section-product-detail">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="mb-3">Details</h1>
+            <p class="text-secondary mb-4">
+              Just as a book is judged by its cover, the first thing you notice
+              when you pick up a modern smartphone is its display. Nothing
+              surprising. Because advanced technologies allow you to practically
+              level the display frames and capture by the front camera and
+              speaker, leaving no room for bold design solutions. And in the
+              case of the iPhone 14 Pro Max, the front camera and speaker are
+              hidden in the Dynamic Island - a new solution from Apple that
+              combines hardware and software.
+            </p>
+
+            <!-- Screen Section -->
+            <div class="mb-4">
+              <h6 class="fw-bold mb-3">Screen</h6>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">Screen diagonal</span>
+                    <span class="fw-medium">6.7"</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">The screen resolution</span>
+                    <span class="fw-medium">2796×1290</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">The screen refresh rate</span>
+                    <span class="fw-medium">120 Hz</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">The pixel density</span>
+                    <span class="fw-medium">460 ppi</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">Screen type</span>
+                    <span class="fw-medium">OLED</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">Additionally</span>
+                    <div class="text-end">
+                      <div class="fw-medium">Dynamic Island</div>
+                      <div class="fw-medium">Always-On display</div>
+                      <div class="fw-medium">ProMotion</div>
+                      <div class="fw-medium">True Tone</div>
+                      <div class="fw-medium">Wide color (P3)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CPU Section -->
+            <div class="mb-4">
+              <h6 class="fw-bold mb-3">CPU</h6>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">CPU</span>
+                    <span class="fw-medium">A16 Bionic</span>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between border-bottom pb-2"
+                  >
+                    <span class="text-secondary">Number of cores</span>
+                    <span class="fw-medium">6</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="text-center">
+              <div class="btn-primary border-2 border-black text-black">
+                View More
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-chevron-down ms-1"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-product-detail">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="mb-3">Reviews</h1>
+
+            <!-- Overall Rating -->
+            <div class="d-flex align-items-center gap-2 mb-4">
+              <h1 class="mb-0">4.8</h1>
+              <div>
+                <div class="d-flex text-warning mb-1">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <small class="text-secondary">(2,391 reviews)</small>
+              </div>
+            </div>
+
+            <!-- Rating Bars -->
+            <div class="mb-4">
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <span class="text-secondary">Excellent</span>
+                  <span class="text-secondary small">1731</span>
+                </div>
+                <div class="progress" style="height: 6px">
+                  <div class="progress-bar bg-warning" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <span class="text-secondary">Good</span>
+                  <span class="text-secondary small">452</span>
+                </div>
+                <div class="progress" style="height: 6px">
+                  <div class="progress-bar bg-warning" style="width: 65%"></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <span class="text-secondary">Average</span>
+                  <span class="text-secondary small">167</span>
+                </div>
+                <div class="progress" style="height: 6px">
+                  <div class="progress-bar bg-warning" style="width: 25%"></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <span class="text-secondary">Below Average</span>
+                  <span class="text-secondary small">39</span>
+                </div>
+                <div class="progress" style="height: 6px">
+                  <div class="progress-bar bg-warning" style="width: 15%"></div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-1"
+                >
+                  <span class="text-secondary">Poor</span>
+                  <span class="text-secondary small">2</span>
+                </div>
+                <div class="progress" style="height: 6px">
+                  <div class="progress-bar bg-warning" style="width: 5%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Individual Reviews -->
+            <div class="mb-4">
+              <!-- Review 1 -->
+              <div
+                style="background-color: #fafafa"
+                class="mb-4 py-5 px-4 rounded-4"
+              >
+                <div class="d-flex gap-3 mb-2">
+                  <img
+                    src="asset/reviewer-img-1.png"
+                    class="rounded-circle"
+                    width="50"
+                    height="50"
+                    alt="Robert Casey"
+                  />
+                  <div>
+                    <h6 class="mb-0 mt-2 fw-bold">Robert Casey</h6>
+                    <div class="text-warning mt-2">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star"></i>
+                    </div>
+                  </div>
+                  <small class="text-secondary ms-auto">5 days ago</small>
+                </div>
+                <p class="mb-0 ms-5 ps-5">
+                  I love it! As I'm switching to my kids like the camera is a
+                  little fuzzy. Having it will change with a software update.
+                  otherwise, love the phone!
+                </p>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div
+              style="background-color: #fafafa"
+              class="mb-4 py-5 px-4 rounded-4"
+            >
+              <div class="d-flex gap-3 mb-2">
+                <img
+                  src="asset/reviewer-img-2.png"
+                  class="rounded-circle"
+                  width="50"
+                  height="50"
+                  alt="Ronald Richards"
+                />
+                <div>
+                  <h6 class="mb-0 mt-2 fw-bold">Ronald Richards</h6>
+                  <div class="text-warning mt-2">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                  </div>
+                </div>
+                <small class="text-secondary ms-auto">5 days ago</small>
+              </div>
+              <p class="mb-0 ms-5 ps-5">
+                I love it! As I'm switching to my kids like the camera is a
+                little fuzzy. Having it will change with a software update.
+                otherwise, love the phone!
+              </p>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div
+            style="background-color: #fafafa"
+            class="mb-4 py-5 px-4 rounded-4"
+          >
+            <div class="d-flex gap-3 mb-2">
+              <img
+                src="asset/reviewer-img-3.png"
+                class="rounded-circle"
+                width="50"
+                height="50"
+                alt="darcy king"
+              />
+              <div>
+                <h6 class="mb-0 mt-2 fw-bold">Darcy King</h6>
+                <div class="text-warning mt-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+              </div>
+              <small class="text-secondary ms-auto">5 days ago</small>
+            </div>
+            <p class="mb-0 ms-5 ps-5">
+              I love it! As I'm switching to my kids like the camera is a little
+              fuzzy. Having it will change with a software update. otherwise,
+              love the phone!
+            </p>
+          </div>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center">
+          <div class="btn-primary mt-5 border-2 border-black text-black">
+            View More
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-down ms-1"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- related-Product-Section-Start -->
+    <section class="section-product">
+      <div class="container">
+        <h4 style="font-size: 2.4rem; font-weight: 500">Related Products</h4>
+
+        <div class="grid subgrid">
+          <div class="bg-product-item">
+            <div>
+              <img
+                class="product-fav-position"
+                src="asset/favorite-icon.svg"
+                alt="fav"
+              />
+              <img
+                src="asset/product-1.png"
+                style="width: 160px; height: 160px"
+                alt="product"
+              />
+              <h6 class="product-description">
+                Apple iPhone 14 Pro Max 128GB Deep Purple
+              </h6>
+              <h4>$900</h4>
+              <div>
+                <a href="/" class="btn-secondary btn-space">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-product-item">
+            <div>
+              <img
+                class="product-fav-position"
+                src="asset/favorite-icon.svg"
+                alt="fav"
+              />
+              <img
+                src="asset/product-4.png"
+                style="width: 160px; height: 160px"
+                alt="product"
+              />
+              <h6 class="product-description">
+                AirPods Headphone Max Silver Mate
+              </h6>
+              <h4>$549</h4>
+              <div>
+                <a href="/" class="btn-secondary btn-space">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-product-item">
+            <div>
+              <img
+                class="product-fav-position"
+                src="asset/favorite-icon.svg"
+                alt="fav"
+              />
+              <img
+                src="asset/product-3.png"
+                style="width: 160px; height: 160px"
+                alt="product"
+              />
+              <h6 class="product-description">
+                Apple Watch Series 9 GPS 41mm Starlight Aluminium Case
+              </h6>
+              <h4>$399</h4>
+              <div>
+                <a href="/" class="btn-secondary btn-space">Buy Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-product-item">
+            <div>
+              <img
+                class="product-fav-position"
+                src="asset/favorite-icon.svg"
+                alt="fav"
+              />
+              <img
+                src="asset/product-2.png"
+                style="width: 160px; height: 160px"
+                alt="product"
+              />
+              <h6 class="product-description">
+                Blackmagic Pocket Cinema Camera 6k
+              </h6>
+              <h4>$2535</h4>
+              <div>
+                <a href="/" class="btn-secondary btn-space">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- related-Product-Section-Start -->
+
+    <!-- Footer-Section-Start -->
+    <footer class="section-footer">
+      <div class="container">
+        <div class="bg-footer">
+          <div>
+            <a href="/">
+              <img
+                class="lg-grid-gap"
+                src="asset/logo-2.png"
+                alt="logo"
+                style="width: 95px; height: 22px"
+              />
+            </a>
+            <p>
+              We are a residential interior design firm located in Portland. Our
+              boutique-studio offers more than
+            </p>
+          </div>
+
+          <div>
+            <h6>Services</h6>
+            <a href="/">Bonus program</a>
+            <a href="/">Gift cards</a>
+            <a href="/">Credit and payment</a>
+            <a href="/">Service contracts</a>
+            <a href="/">Non-cash account</a>
+            <a href="/">Payment</a>
+          </div>
+
+          <div>
+            <h6>Assistance to the buyer</h6>
+            <a href="/">Find an order</a>
+            <a href="/">Terms of delivery</a>
+            <a href="/">Exchange and return of goods</a>
+            <a href="/">Gurantee</a>
+            <a href="/">Frequently asked questions</a>
+            <a href="/">Terms of use of the site</a>
+          </div>
+
+          <div class="link-space">
+            <a href="/">
+              <img
+                src="asset/twitter.png"
+                alt="twitter"
+                style="width: 24px; height: 20px"
+              />
+            </a>
+            <a href="/">
+              <img
+                src="asset/facebook.png"
+                alt="facebook"
+                style="width: 11.54px; height: 20px"
+              />
+            </a>
+            <a href="/">
+              <img
+                src="asset/tiktok.png"
+                alt="tiktok"
+                style="width: 20px; height: 20px"
+              />
+            </a>
+            <a href="/">
+              <img
+                src="asset/instagram.png"
+                alt="instagram"
+                style="width: 20px; height: 20px"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer-Section-End -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
