@@ -660,8 +660,6 @@ body {
 /* product-detail-Section-End */
 
 
-
-
 .custom-dropdown {
   position: relative;
 }
@@ -671,13 +669,46 @@ body {
   border: none;
   padding: 0;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Remove default arrow from button */
-.dropdown-btn::after {
-  display: none;
+/* Menu Icon Styles */
+.menu-icon {
+  width: 24px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Cross Icon Animation */
+.custom-dropdown.active .menu-icon span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.custom-dropdown.active .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.custom-dropdown.active .menu-icon span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Dropdown Menu Styles */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -692,15 +723,15 @@ body {
   z-index: 1000;
 }
 
-/* Show menu on button hover */
-.custom-dropdown:hover .dropdown-menu {
+.custom-dropdown.active .dropdown-menu {
   display: block;
+  animation: fadeIn 0.3s ease;
 }
 
 .dropdown-menu li a {
   display: block;
   padding: 12px 25px;
-  color: #333;
+  color: #211c24;
   text-decoration: none;
   font-size: 16px;
   transition: background 0.3s;
@@ -710,7 +741,6 @@ body {
   background: #f5f5f5;
 }
 
-/* Add arrow at top of dropdown */
 .dropdown-menu::before {
   content: '';
   position: absolute;
@@ -723,14 +753,16 @@ body {
   box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.04);
 }
 
-/* Desktop hover behavior */
-@media (min-width: 768px) {
-  .custom-dropdown:hover .dropdown-menu {
-    display: block;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
-
 
 
 /* For Medium Devices */

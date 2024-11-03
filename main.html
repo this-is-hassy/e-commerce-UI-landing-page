@@ -4,20 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>e-commerce</title>
   </head>
   <body>
-
-
     <!-- Navbar Start -->
     <header class="section-navbar">
       <div class="container">
@@ -29,22 +27,36 @@
           />
         </a>
 
-<div class="custom-dropdown">
-  <button type="button" class="dropdown-btn menu" id="dropdownBtn">
-    <img
-      src="/asset/ham-burger-icon.png"
-      alt="menu"
-      style="width: 40px; height: 40px"
-    />
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="/main.html">Main</a></li>
-    <li><a href="/products.html">Products</a></li>
-    <li><a href="/filter.html">Filter</a></li>
-  </ul>
-</div>
+        <!-- <div class="custom-dropdown">
+          <button type="button" class="dropdown-btn menu" id="dropdownBtn">
+            <img
+              src="/asset/ham-burger-icon.png"
+              alt="menu"
+              style="width: 40px; height: 40px"
+            />
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/main.html">Main</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/filter.html">Filter</a></li>
+          </ul>
+        </div> -->
 
 
+        <div class="custom-dropdown">
+          <button type="button" class="dropdown-btn" id="dropdownBtn">
+            <div class="menu-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/main.html">Main</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/filter.html">Filter</a></li>
+          </ul>
+        </div>
 
 
 
@@ -84,8 +96,6 @@
             </a>
           </li>
         </ul>
-
-
       </div>
     </header>
     <!-- Navbar End -->
@@ -684,7 +694,12 @@
         <div class="bg-footer">
           <div>
             <a href="/">
-              <img class="lg-grid-gap" src="asset/logo-2.png" alt="logo" style="width: 95px; height: 22px;" />
+              <img
+                class="lg-grid-gap"
+                src="asset/logo-2.png"
+                alt="logo"
+                style="width: 95px; height: 22px"
+              />
             </a>
             <p>
               We are a residential interior design firm located in Portland. Our
@@ -714,16 +729,32 @@
 
           <div class="link-space">
             <a href="/">
-              <img src="asset/twitter.png" alt="twitter" style="width: 24px; height: 20px;" />
+              <img
+                src="asset/twitter.png"
+                alt="twitter"
+                style="width: 24px; height: 20px"
+              />
             </a>
             <a href="/">
-              <img src="asset/facebook.png" alt="facebook" style="width: 11.54px; height: 20px;" />
+              <img
+                src="asset/facebook.png"
+                alt="facebook"
+                style="width: 11.54px; height: 20px"
+              />
             </a>
             <a href="/">
-              <img src="asset/tiktok.png" alt="tiktok" style="width: 20px; height: 20px;" />
+              <img
+                src="asset/tiktok.png"
+                alt="tiktok"
+                style="width: 20px; height: 20px"
+              />
             </a>
             <a href="/">
-              <img src="asset/instagram.png" alt="instagram" style="width: 20px; height: 20px;" />
+              <img
+                src="asset/instagram.png"
+                alt="instagram"
+                style="width: 20px; height: 20px"
+              />
             </a>
           </div>
         </div>
@@ -758,41 +789,10 @@
       dots.forEach((dot, index) => {
         dot.addEventListener("click", () => goToSlide(index));
       });
-
-
-      // DROPDOWN
-
-      document.addEventListener('DOMContentLoaded', function() {
-  const dropdownBtn = document.getElementById('dropdownBtn');
-  const dropdown = document.querySelector('.custom-dropdown');
-
-  // Toggle dropdown on button click
-  dropdownBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    dropdown.classList.toggle('active');
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove('active');
-    }
-  });
-
-  // Close dropdown when clicking on a menu item (for mobile)
-  const menuItems = dropdown.querySelectorAll('.dropdown-menu a');
-  menuItems.forEach(item => {
-    item.addEventListener('click', function() {
-      dropdown.classList.remove('active');
-    });
-  });
-});
-
-
-
     </script>
+    <script src="script.js"></script>
 
-     <!-- Bootstrap JS -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
