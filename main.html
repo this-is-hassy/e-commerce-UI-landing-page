@@ -30,7 +30,7 @@
         </a>
 
 <div class="custom-dropdown">
-  <button type="button" class="dropdown-btn menu">
+  <button type="button" class="dropdown-btn menu" id="dropdownBtn">
     <img
       src="/asset/ham-burger-icon.png"
       alt="menu"
@@ -758,6 +758,38 @@
       dots.forEach((dot, index) => {
         dot.addEventListener("click", () => goToSlide(index));
       });
+
+
+      // DROPDOWN
+
+      document.addEventListener('DOMContentLoaded', function() {
+  const dropdownBtn = document.getElementById('dropdownBtn');
+  const dropdown = document.querySelector('.custom-dropdown');
+
+  // Toggle dropdown on button click
+  dropdownBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle('active');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('active');
+    }
+  });
+
+  // Close dropdown when clicking on a menu item (for mobile)
+  const menuItems = dropdown.querySelectorAll('.dropdown-menu a');
+  menuItems.forEach(item => {
+    item.addEventListener('click', function() {
+      dropdown.classList.remove('active');
+    });
+  });
+});
+
+
+
     </script>
 
      <!-- Bootstrap JS -->

@@ -659,6 +659,9 @@ body {
 }
 /* product-detail-Section-End */
 
+
+
+
 .custom-dropdown {
   position: relative;
 }
@@ -719,6 +722,15 @@ body {
   transform: rotate(45deg);
   box-shadow: -3px -3px 5px rgba(0, 0, 0, 0.04);
 }
+
+/* Desktop hover behavior */
+@media (min-width: 768px) {
+  .custom-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+
 
 
 /* For Medium Devices */
